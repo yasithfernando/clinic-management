@@ -1,0 +1,22 @@
+{
+  "name": "clinic-management",
+  "version": "1.0.0",
+  "description": "Clinic Management System as a module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "server": "nodemon backend/index.js"
+
+  },
+  "author": "Yasith Fernando",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
