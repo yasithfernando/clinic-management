@@ -1,0 +1,44 @@
+
+.clinic-table-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+.clinic-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .clinic-table th,
+  .clinic-table td {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+    text-align: left;
+  }
+  
+  .clinic-table th {
+    font-weight: 700;
+    background-color: #f6f8fa;
+    text-transform: uppercase;
+    color: #6c757d;
+    font-size: 0.85rem;
+  }
+  
+  .clinic-table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .clinic-table tbody tr:hover {
+    background-color: #e2e7ed;
+  }
+  

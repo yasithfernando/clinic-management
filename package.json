@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/index.js",
     "server": "nodemon backend/index.js",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Yasith Fernando",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "mongoose": "^7.0.3"
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.22"
   }
 }

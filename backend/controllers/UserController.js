@@ -19,9 +19,9 @@ const getUsers = asyncHandler(async(req,res)=>{
 // @route POST /api/users
 // @access Private
 const addUser = asyncHandler(async(req,res)=>{
-    const {name,email,password,role} = req.body
+    const {name,email,password} = req.body
 
-    if(!name || !email || !password || !role){
+    if(!name || !email || !password){
         res.status(400)
         throw new Error('Please add all fields')
     }
@@ -34,7 +34,7 @@ const addUser = asyncHandler(async(req,res)=>{
         throw new Error('User Already Exists')
     }
 
-    //Has the password
+    //Hash the password
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
 
@@ -43,14 +43,15 @@ const addUser = asyncHandler(async(req,res)=>{
         name,
         email,
         password: hashedPassword,
-        role,
+        role: 'admin',
     })
 
     if(user){
         res.status(201).json({
             _id : user.id,
             name: user.name,
-            email: user.email
+            email: user.email,
+            token: generateToken(user._id),
         })
     } else{
         res.status(400)
